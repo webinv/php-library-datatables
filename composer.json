@@ -1,6 +1,7 @@
 {
     "name": "webinv/datatables",
     "description": "Datatables PHP models",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {

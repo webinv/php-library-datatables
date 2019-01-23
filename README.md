@@ -1,5 +1,11 @@
 # About
 
+[![Build Status](https://travis-ci.org/webinv/php-library-datatables.svg?branch=master)](https://travis-ci.org/webinv/php-library-datatables)
+[![Latest Stable Version](https://poser.pugx.org/webinv/datatables/v/stable)](https://packagist.org/packages/webinv/datatables)
+[![Total Downloads](https://poser.pugx.org/webinv/datatables/downloads)](https://packagist.org/packages/webinv/datatables)
+[![Latest Unstable Version](https://poser.pugx.org/webinv/datatables/v/unstable)](https://packagist.org/packages/webinv/datatables)
+[![License](https://poser.pugx.org/webinv/datatables/license)](https://packagist.org/packages/webinv/datatables)
+
 Pure PHP models for datatables.net
 
 * https://datatables.net
