@@ -8,6 +8,7 @@ namespace Webinv\Datatables;
 use Webinv\Datatables\Request\Column;
 use Webinv\Datatables\Request\Order;
 use Webinv\Datatables\Request\Search;
+use Psr\Http\Message as Psr;
 
 /**
  * Class RequestFactory
@@ -42,6 +43,35 @@ class RequestFactory
     public function __construct(array $request)
     {
         $this->request = $request;
+    }
+
+    /**
+     * @return RequestInterface
+     */
+    public static function fromGlobals() : RequestInterface
+    {
+        return (new self($_GET))->create();
+    }
+
+    /**
+     * @param Psr\RequestInterface $request
+     *
+     * @return RequestInterface
+     */
+    public static function fromPsr7(Psr\RequestInterface $request) : RequestInterface
+    {
+        return self::fromUri($request->getUri());
+    }
+
+    /**
+     * @param Psr\UriInterface $uri
+     *
+     * @return RequestInterface
+     */
+    public static function fromUri(Psr\UriInterface $uri) : RequestInterface
+    {
+        parse_str(urldecode($uri->getQuery()), $query);
+        return (new self($query))->create();
     }
 
     /**
